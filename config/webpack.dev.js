@@ -16,7 +16,7 @@ module.exports = merge(common, {
         use: [
           'style-loader',
           {
-            loader: 'css-loader',
+            loader: 'css-loader', 
             options: {
               sourceMap: true,
               importLoaders: 2,

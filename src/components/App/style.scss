@@ -1,0 +1,9 @@
+@import 'src/styles/vars';
+.app {
+  background-color: $main-color;
+  width: 1900px;
+  max-width: 80%;
+  margin:0 auto;
+  height: 100vh;
+  position: relative;
+}
