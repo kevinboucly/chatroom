@@ -2,8 +2,8 @@
 import React from 'react';
 
 // == Import
-import Form from 'src/components/Form';
-import Messages from 'src/components/Messages';
+import Form from 'src/containers/Form';
+import Messages from 'src/containers/Messages';
 
 import './style.scss';
 

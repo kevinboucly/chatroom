@@ -2,7 +2,7 @@ const initialState = {
   messages: [
     {
       author: 'super chat',
-      content: 'coucou',
+      content: 'salut',
       id: 1,
     },
     {
