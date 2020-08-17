@@ -1,6 +1,8 @@
-import { SEND_MESSAGE } from 'src/actions';
+import { SEND_MESSAGE, CHANGE_TEXT } from 'src/actions';
+import { getNextId } from 'src/selectors';
 
 const initialState = {
+  text: '',
   messages: [
     {
       author: 'super chat',
@@ -31,17 +33,26 @@ const reducer = (state = initialState, action = {}) => {
       const newMessages = [
         ...state.messages,
       ];
+
+      const id = getNextId(state.messages);
+
       const newMessage = {
         author: 'Super chat',
-        content: 'test',
-        id: 999,
+        content: state.text,
+        id,
       };
       newMessages.push(newMessage);
       return {
         ...state,
         messages: newMessages,
+        text: '',
       };
     }
+    case CHANGE_TEXT:
+      return {
+        ...state,
+        text: action.payload,
+      };
     default:
       return state;
   }
