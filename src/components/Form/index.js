@@ -3,20 +3,19 @@ import PropTypes from 'prop-types';
 
 import './style.scss';
 
-const Form = ({sendMessage} ) => {
+const Form = ({ send }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    sendMessage();
+    send();
   };
   return (
-<form onSubmit={handleSubmit} className="form">
-  <input className="form-input" type="text" placeholder="Veuillez saisir un message..."></input>
-  <button className="form-button" type="submit">&gt;</button>
-</form>
+    <form onSubmit={handleSubmit} className="form">
+      <input className="form-input" type="text" placeholder="Veuillez saisir un message..." />
+      <button className="form-button" type="submit">&gt;</button>
+    </form>
   );
-}
+};
 Form.propTypes = {
-  sendMessage: PropTypes.func.isRequired,
-}
+  send: PropTypes.func.isRequired,
+};
 export default Form;
- 
