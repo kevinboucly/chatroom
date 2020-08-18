@@ -2,8 +2,10 @@ import { SEND_MESSAGE, CHANGE_TEXT, TOGGLE_OPEN } from 'src/actions';
 import { getNextId } from 'src/selectors';
 
 const initialState = {
-  open: false,
+  open: true,
   text: '',
+  email: 'kevin@hihi.com',
+  password: '123',
   messages: [
     {
       author: 'super chat',

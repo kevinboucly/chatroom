@@ -4,9 +4,24 @@
 .settings {
   position: fixed;
   right: 0;
-  top: 0;
+  top: 1rem;
 width: 200px;
-padding: 1rem;
+padding-right: 1rem;
+transform: translateX(100%);
+transition: transform .3s;
+
+
+&--open { 
+  transform: translateX(0);
+
+  .settings-toggler {
+    transform: rotate(45deg);
+
+    &:hover {
+      transform: scale(1.2) rotate(45deg);
+    }
+  }
+}
 
 &-toggler {
   border-radius: 50%;
@@ -14,6 +29,10 @@ padding: 1rem;
   background-color: white;
   width: 2rem;
   height: 2rem;
+  position: absolute;
+  top: .25rem;
+  left:-3rem;
+  transition: transform .3s;
 
   &:hover {
     transform: scale(1.2);
