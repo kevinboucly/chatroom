@@ -1,4 +1,4 @@
-import { SEND_MESSAGE, CHANGE_TEXT } from 'src/actions';
+import { SEND_MESSAGE, CHANGE_TEXT, TOGGLE_OPEN } from 'src/actions';
 import { getNextId } from 'src/selectors';
 
 const initialState = {
@@ -53,6 +53,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         text: action.payload,
+      };
+    case TOGGLE_OPEN:
+      return {
+        ...state,
+        open: !state.open,
       };
     default:
       return state;

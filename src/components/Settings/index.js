@@ -1,13 +1,14 @@
 import React from 'react';
 import { Plus } from 'react-feather';
+import PropTypes from 'prop-types';
 
 import Field from 'src/components/Field';
 import './style.scss';
 
-const Setting = () => (
+const Settings = ({ open, toggleOpen }) => (
   <div className="settings">
-    <button className="settings-toggler" type="button"><Plus color="#0055FF " size="100%" /></button>
-    {true
+    <button onClick={toggleOpen} className="settings-toggler" type="button"><Plus color="#0055FF " size="100%" /></button>
+    {open
     && (
     <form className="settings-form">
       <Field type="email" placeholder="Email" />
@@ -18,4 +19,8 @@ const Setting = () => (
   </div>
 );
 
-export default Setting;
+Settings.propTypes = {
+  open: PropTypes.bool.isRequired,
+  toggleOpen: PropTypes.func.isRequired,
+};
+export default Settings;
