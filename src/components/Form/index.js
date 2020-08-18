@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Send } from 'react-feather';
 
 import './style.scss';
 
@@ -15,7 +16,7 @@ const Form = ({ send, inputValue, changeText }) => {
   return (
     <form onSubmit={handleSubmit} className="form">
       <input onChange={handleChange} value={inputValue} className="form-input" type="text" placeholder="Veuillez saisir un message..." />
-      <button className="form-button" type="submit">&gt;</button>
+      <button className="form-button" type="submit"><Send /></button>
     </form>
   );
 };

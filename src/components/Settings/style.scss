@@ -1,6 +1,36 @@
+@use "sass:color";
+@import "src/styles/vars";
+
 .settings {
   position: fixed;
   right: 0;
   top: 0;
+width: 200px;
+padding: 1rem;
 
+&-toggler {
+  border-radius: 50%;
+  border: 0;
+  background-color: white;
+  width: 2rem;
+  height: 2rem;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+&-submit {
+  width: 100%;
+  border-radius: 5px;
+  background-color: $action-color;
+  border:0;
+  padding: 0.5rem;
+  color: white;
+  margin-top: .5rem;
+
+  &:hover {
+    background-color: color.adjust($action-color, $lightness: -20%);
+  }
+}
 }

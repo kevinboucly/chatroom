@@ -2,6 +2,7 @@ import { SEND_MESSAGE, CHANGE_TEXT } from 'src/actions';
 import { getNextId } from 'src/selectors';
 
 const initialState = {
+  open: false,
   text: '',
   messages: [
     {
