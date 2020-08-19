@@ -1,11 +1,13 @@
-import { SEND_MESSAGE, CHANGE_TEXT, TOGGLE_OPEN } from 'src/actions';
+import {
+  SEND_MESSAGE, CHANGE_TEXT, TOGGLE_OPEN, CHANGE,
+} from 'src/actions';
 import { getNextId } from 'src/selectors';
 
 const initialState = {
   open: true,
   text: '',
-  email: 'kevin@hihi.com',
-  password: '123',
+  email: '',
+  password: '',
   messages: [
     {
       author: 'super chat',
@@ -60,6 +62,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         open: !state.open,
+      };
+    case CHANGE:
+      return {
+        ...state,
+        [action.key]: action.value,
       };
     default:
       return state;

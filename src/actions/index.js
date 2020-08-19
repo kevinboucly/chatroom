@@ -1,6 +1,7 @@
 export const SEND_MESSAGE = 'SEND_MESSAGE';
 export const CHANGE_TEXT = 'CHANGE_TEXT';
 export const TOGGLE_OPEN = 'TOGGLE_OPEN';
+export const CHANGE = 'CHANGE';
 
 export const sendMessage = () => ({
   type: SEND_MESSAGE,
@@ -13,4 +14,10 @@ export const changeText = (value) => ({
 
 export const toggleOpen = () => ({
   type: TOGGLE_OPEN,
+});
+
+export const change = (key, value) => ({
+  type: CHANGE,
+  key,
+  value,
 });
