@@ -10,13 +10,6 @@ const Settings = ({ open, toggleOpen, login }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     login();
-    axios.post('http://localhost:3001/login', { email: 'bouclierman@herocorp.io', password: 'jennifer' })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
   };
   return (
     <div className={open ? 'settings settings--open' : 'settings'}>

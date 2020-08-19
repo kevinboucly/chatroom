@@ -6,6 +6,7 @@ import { getNextId } from 'src/selectors';
 const initialState = {
   open: true,
   text: '',
+  pseudo: 'anonyme',
   email: '',
   password: '',
   messages: [
@@ -42,7 +43,7 @@ const reducer = (state = initialState, action = {}) => {
       const id = getNextId(state.messages);
 
       const newMessage = {
-        author: 'Super chat',
+        author: state.pseudo,
         content: state.text,
         id,
       };
