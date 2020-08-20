@@ -7,7 +7,7 @@ const auth = (store) => (next) => (action) => {
       const state = store.getState();
       axios.post('http://localhost:3001/login', { email: state.email, password: state.password })
         .then((response) => {
-          console.log(response.data);
+          // console.log(response.data);
           const actionPseudo = change('pseudo', response.data);
           store.dispatch(actionPseudo);
         })

@@ -10,7 +10,7 @@ const Form = ({ send, inputValue, changeText }) => {
     send();
   };
   const handleChange = (event) => {
-    console.log('je veux changer la valeur du text, voici la nouvelle valeur:', event.target.value);
+    // console.log('je veux changer la valeur du text, voici la nouvelle valeur:', event.target.value);
     changeText(event.target.value);
   };
   return (

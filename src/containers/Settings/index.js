@@ -12,7 +12,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(toggleOpen());
   },
   login: () => {
-    console.log('je veux me connecter');
+    // console.log('je veux me connecter');
     const action = login();
     dispatch(action);
   },
