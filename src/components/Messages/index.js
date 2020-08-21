@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Message from './Message';
+import Message from 'src/containers/Messages/Message';
 import './style.scss';
 
 const Messages = ({ messages }) => (
@@ -14,7 +14,7 @@ const Messages = ({ messages }) => (
 );
 Messages.propTypes = {
   messages: PropTypes.arrayOf(
-    PropTypes.shape({
+    PropTypes.shape({  
       id: PropTypes.number.isRequired,
     }),
   ).isRequired,

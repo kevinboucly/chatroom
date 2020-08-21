@@ -5,3 +5,5 @@ export const getNextId = (rows) => {
   const id = highestId + 1;
   return id;
 };
+
+export const isAuthor = (pseudo, author) => pseudo === author;

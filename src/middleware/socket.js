@@ -7,10 +7,10 @@ const socket = (store) => (next) => (action) => {
   switch (action.type) {
     case WS_CONNECT: {
       socketCanal = window.io('http://localhost:3001');
-      socketCanal.on('send_message', (message) => {
-        console.log('un message a été envoyé', message);
+      socketCanal.on('send_message', (info) => {
+        console.log('un message a été envoyé', info);
         console.log('je peux réagir en modifiant mon state puisque je peux afficher dans l application');
-        store.dispatch(receiveMessage(message));
+        store.dispatch(receiveMessage(info));
       });
       break;
     }
