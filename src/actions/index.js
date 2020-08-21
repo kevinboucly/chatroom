@@ -4,6 +4,7 @@ export const TOGGLE_OPEN = 'TOGGLE_OPEN';
 export const CHANGE = 'CHANGE';
 export const LOGIN = 'LOGIN';
 export const WS_CONNECT = 'WS_CONNECT';
+export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE';
 
 export const sendMessage = () => ({
   type: SEND_MESSAGE,
@@ -30,4 +31,9 @@ export const login = () => ({
 
 export const wsConnect = () => ({
   type: WS_CONNECT,
+});
+
+export const receiveMessage = (message) => ({
+  type: RECEIVE_MESSAGE,
+  message,
 });

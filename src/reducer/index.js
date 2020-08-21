@@ -1,5 +1,5 @@
 import {
-  SEND_MESSAGE, CHANGE_TEXT, TOGGLE_OPEN, CHANGE,
+  RECEIVE_MESSAGE, CHANGE_TEXT, TOGGLE_OPEN, CHANGE,
 } from 'src/actions';
 import { getNextId } from 'src/selectors';
 
@@ -35,18 +35,22 @@ const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case SEND_MESSAGE: {
+    case RECEIVE_MESSAGE: {
+      console.log('reducer RECEIVE_MESSAGE', action.message);
       const newMessages = [
         ...state.messages,
       ];
 
-      const id = getNextId(state.messages);
+      // const id = getNextId(state.messages);
 
+      // const newMessage = {
+      //   author: action.message.pseudo,
+      //   content: action.message.text,
+      //   id: action.message.id,
+      // };
       const newMessage = {
-        author: state.pseudo,
-        content: state.text,
-        id,
-      };
+        ...action.message,
+      }
       newMessages.push(newMessage);
       return {
         ...state,
